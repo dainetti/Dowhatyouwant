@@ -1,0 +1,612 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{comment}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usetikzlibrary{shapes.symbols,patterns}
+
+\usepackage[leftcaption]{sidecap}
+\sidecaptionvpos{figure}{m}
+
+\usepackage{graphicx}
+
+%%per i numeri romani
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+
+\begin{document} 
+\section{Theory 1}
+
+Asakura and Oosawa deduced an attractive force acting between suspended colloids in a solution of polymeric particles where there is neither direct interaction between two colloids nor between colloids and solute polymeric particles.
+This force has a range of interaction of the order of the diameter of the polymeric particle and a magnitude of the osmotic pressure of the polymeric particles. 
+
+The polymeric particles act as a depletant, in the sense that they decrease the available volume, and compete with  the bigger colloidal particle to have 
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Force Method}
+
+\subsubsection{Entropic Interaction Between two Flat Plates}
+
+Let us consider two large parallel plates immersed in a solution of rigid spherical polymeric particles. If the distance between the inner surfaces of these two plates is smaller than the diameter of solute polymeric particles, none of those polymeric particles can enter in the space between the plates. Therefore a force equivalent to the osmotic pressure of the solution of polymeric particles acts on the outer surfaces of these plates.
+
+The force per unit area, $K(h)$ , between the two parallel plates separated by a distance  $ h $, is the difference between the osmotic pressure $ P_i $ inside the plates and the outside pressure $ P_o$
+
+\begin{equation}
+K=P_i-P_o \; .
+\end{equation}
+
+We suppose that the hard spheres behave thermodynamically ideally and so the osmotic pressure outside the plates is given by Van't Hoff law
+
+\begin{equation*}
+P_o= n_bkT  ,
+\end{equation*}
+
+where $ n_b$ is the bulk number density of the polymers. When the plate separation $ h $ is equal or larger than the diameter $ \sigma $ of the hard spheres the osmotic pressure inside the plates is equal to the one outside:
+
+\begin{equation*}
+P_i=P_o= n_bkT ,
+\end{equation*}
+
+Instead when $ h $ is smaller than $ \sigma $ no polymer can enter the gap and $P_i=0$. 
+
+Summarising the last results we have:
+\begin{equation}
+    \begin{aligned}
+    K(h) &=-n_bkT \quad & for & \quad h < \sigma \\
+         &=0 \quad & for & \quad h \geq \sigma \; .
+    \end{aligned}
+\end{equation}
+
+
+We know that $K=-\frac{dW}{dh}$, and integrating from $\infty$ to $h$ yields the interaction potential per unit area $W(h)$ between the plates at distance (h)
+
+\begin{equation}
+    \begin{aligned}
+    W(h) &=-n_bkT(\sigma -h) \quad & for & \quad h < \sigma \\
+         &=0 \quad & for & \quad h \geq \sigma \; .
+         \label{pot}
+    \end{aligned}
+\end{equation}
+
+\begin{SCfigure} [0.8][ht]
+\centering
+\begin{tikzpicture}[scale=0.6]
+
+\fill[black!15] (1,3) -- (1,-3) -- (0.7,-3) -- (0.7, 3) -- cycle;
+ \fill[black!15] (-1,-3) -- (-1,3) -- (-0.7,3) -- (-0.7, -3) -- cycle;
+\draw  (-1,-3) -- (-1,3) -- (-0.7,3) -- (-0.7, -3) -- cycle;
+\draw  (1,3) -- (1,-3) -- (0.7,-3) -- (0.7, 3) -- cycle;
+  
+\draw [<->] (-0.68,0) --(0.68,0);
+\draw (0,0)  node[anchor=north]  {$h$};
+\draw [<-] (1.01,-0.5) --(2.8,-0.5);
+\draw (1.9,-0.5)  node[anchor=north]  {\small{K}};
+\draw (1.75,0.5) circle (0.7cm);
+\draw (2.2,2.5) circle (0.7cm);
+\draw (-2,1.7) circle (0.7cm);
+\draw (-1.75,0) circle (0.7cm);
+\draw (-2.3,-1.6) circle (0.7cm);
+\draw (2,-1.98) circle (0.7cm);
+\draw [<->] (2.69,-1.98) --(1.31,-1.98);
+\draw (2,-1.98)  node[anchor=north]  {$\sigma$};
+\end{tikzpicture} 
+
+\caption{ \footnotesize{Schematic picture of two parallel flat plates in the presence of hard spheres }}
+
+\label{plates1}
+\end{SCfigure}
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Entropic Interaction Between two Spheres}
+
+When the volume of thickness $ \frac{\sigma}{2} $ around the spherical colloidal particles with radius $ R $ start to overlap, i.e. when the distance r between the centres of the two colloidal particles is smaller than $2R + \sigma $, a clear force arises between these colloidal particles. Lets define an effective entropic force radius $R_e$
+
+\begin{equation}
+    R_e=R+ \frac{\sigma}{2} \; .
+\end{equation}
+
+This attractive force originates from an uncompensated osmotic pressure due to the diminution of penetrable hard spheres from the gap between the colloidal particles.
+
+We can see in the Fig. \ref{entropic2} that the uncompensated pressure act on the surface from $\theta=0$ to $\theta=\theta_0$, where $\theta_0=\arccos{\left(\frac{r}{2R_d}\right)}$ .
+
+For symmetry reasons only the contributes to the total force along the line who connects the two spheres is meaningful. The angle on which this
+forces operate is between $\theta$ e  $\theta + d\theta$, whose surface is $2\pi R_d^2sin\theta d\theta $ We can obtain the whole force acting between the colloidal spheres integrating from $0$ to $\theta_0$ on $\theta$
+
+
+\begin{equation}
+    \begin{aligned}
+    \label{equ:ForceAO}
+        \frac{K_s(r)}{n_bkT} &= -2\pi \left( R + \frac{\sigma}{2} \right)^2 \int\limits_{0}^{\theta_0} sen\theta cos\theta \;  d\theta   \\
+        &= -\pi R_d^2 \left[ 1-\left( \frac{r}{2R_d}\right)^2\right]   &2R  \leq  r  < 2R_d&\\
+        &=0   & r \geq 2R_d & \; .
+    \end{aligned}
+\end{equation}
+
+The minus sign in the last equations stand for an attractive force.
+
+We can now obtain a depletion potential by integration of the depletion force
+
+\begin{equation}
+    \begin{aligned}
+        W_s(r) &= \int\limits_r^{2R_d} K_s(r) \; dr\\
+        &= -n_bkTV_{ov}(r)   &2R  \leq  r  < 2R_d&\\
+        &=0   & r \geq 2R_d & \; .
+    \label{equ:PotAO}
+    \end{aligned}
+\end{equation}
+
+We can note that the potential $W_s(r)$ is equal to pressure time the overlap volume $V_{ov}$ where 
+
+\begin{equation}
+  V_{ov}(r)=  \frac{4\pi}{3}R_d^3 \left[1 - \frac{3}{4}\frac{r}{R_d} +    \frac{1}{16} \left( \frac{r}{R_d}\right)^3 \right]
+  \label{voldep1}
+\end{equation}
+
+or can be expressed as follows
+
+\begin{equation}
+  V_{ov}(h)= \frac{\pi}{6}(\sigma-h)^2\left(3R + \sigma+\frac{h}{2} \right) \;.
+    \label{voldep2}
+\end{equation}
+
+Both equations are widely used in the literature. 
+
+In the limit $ \frac{\sigma}{2} \ll R $ the force \ref{equ:ForceAO} becomes
+
+\begin{equation}
+ \frac{K_s(h)}{n_bkT}=-\pi R(\sigma - h)
+ \label{bhospher}
+\end{equation}
+
+and from the potential \ref{equ:PotAO} we get
+
+\begin{equation}
+  \frac{W_s(h)}{n_bkT}=-\pi \frac{R}{2} (\sigma - h)^2 . 
+  \label{AOpotspher}
+\end{equation}
+
+The latter two formulae are valid when $h=r-2R<\sigma$.
+
+\begin{figure} [t]
+\centering
+\begin{tikzpicture} [scale=0.8]
+
+\draw [ thick] (-2.5,0)  circle (2cm) ;
+\draw [ thick] (2.5,0)  circle (2cm) ;
+\draw[densely dashed] (-2.5,0)  circle (2.8868cm) ;
+\draw[densely dashed](2.5,0)  circle (2.8868cm) ;
+\draw [<->, thick] (-2.501,-0.01) -- (-3.9142 cm , -1.4142 cm);
+\draw (-3.55,-0.4)  node[anchor=north] {$R$};
+\draw [<->, thick]  (-3.9192 cm , -1.4192 cm) -- (-4.5413 cm, -2.0413 cm);
+\draw (-4.6,-1.5)  node[anchor=west]  {$\frac{\sigma}{2}$ };
+\begin{scope}
+    \clip (-2.5,0) circle (2.8868cm); 
+    \fill[pattern=north east lines] (2.5,0) circle (2.8868cm);  
+\end{scope}
+\draw (1.6343,-2.7557) circle (0.7740cm);
+\draw (-4.2427  , -3.0616) circle (0.7740cm);
+\draw (-5  ,  1.3) circle (0.7740cm);
+\draw ( 6  ,  1.2) circle (0.7740cm);
+\draw (-3.3671 ,   3.0124) circle (0.7740cm);
+\draw (0.1194  ,  2.35) circle (0.7740cm);
+\draw (-2.2055  , -3.2159) circle (0.7740cm);
+\draw (2.1668  , 3) circle (0.7740cm);
+\draw (3.3  ,  -2.8) circle (0.7740cm);
+\draw (-5.4  ,  -0.3) circle (0.7740cm);
+\draw (-1.6  ,  4) circle (0.7740cm);
+\draw [<->] (-0.8260,4)  --  (-2.3740,4);
+\draw (-1.6,4)  node[anchor=south] {$\sigma$ };
+\draw (3.8  , 3.8) circle (0.7740cm);
+\draw (5.6625  , -1.7084) circle (0.7740cm);
+\draw (0.0482  , -3.4457) circle (0.7740cm);
+\draw [<->, thick] (-2.5,0)  --  (2.5,0) ;
+\draw (-1.5,0)  node[anchor=south] {$r$};
+\draw [loosely dashed] (2.501,0) -- (4 , 0.8660);
+\draw [ loosely dashed] (2.501,0) -- (4 , -0.8660);
+\draw [ densely dotted] (2.501,0) -- (4 , 0);
+\draw [<->](3.4cm,0cm) arc (0:30:0.9cm) ;
+\draw (3.7,0)  node[anchor=south]  {$\theta_0$ };
+\draw [<->,] (-0.5,-1.7) -- (0.5,-1.7);
+\draw (0,-1.7)  node[anchor=north]  {$h$};
+\draw [<-] (4.6131, 1.2200) -- (5.4791, 1.7200);
+\draw [<-] (4.8569, 0.6315) -- (5.8228, 0.8903);
+\draw [<-] (4.9400, 0) -- (5.9400,0);
+\draw (5.6,0)  node[anchor=south] {$P$ };
+\draw [<-] (4.8569,-0.6315) -- (5.8228, -0.8903 );
+\draw [<-] (4.6131,-1.2200) -- (5.4791, -1.7200);
+\end{tikzpicture} 
+
+\caption{ \footnotesize{Two hard spheres in the presence of smaller hard spheres as depletants. The proximity of the two spheres produce an  overlap of areas (grey part) excluded to the centre of the smaller spheres, resulting in more free space for the smaller spheres.The overlapped area has the shape of a lens with tickness $\sigma-h$ and height $H=2R_d tan\theta_0,$ where $\theta_0$ is give by $cos\theta_0=\frac{r}{2R_d}$
+The unbalanced number of strikes for the bigger spheres causes an unbalanced pressure $P$, resulting in an attractive force between them.}}
+\label{entropic2}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Extended Gibbs Adsorption Equation Method}
+
+\subsubsection{Entropic interaction between two flat plates}
+An alternative way to obtain the interaction potential is from the extended Gibbs adsorption equation. We use the gran potential $\Omega(T,V,\mu,h)$ as the best thermodynamic potential capable of describing the situation in Fig. \ref{plates2}.
+\begin{equation}
+    \Omega=F-\mu N,
+\end{equation}
+
+\begin{SCfigure}[0.8][t]
+\centering
+    \begin{tikzpicture}%[baseline]
+    
+    \draw[fill=black!15]  (-0.6,-1.15) -- (-0.6,-1.65) -- (0.6,-1.65) -- (0.6, -1.15) -- cycle;
+    \draw  (-0.6,-1) -- (-2.7,-1) -- (-2.7,2) -- (2.7,2) -- (2.7,-1) -- (0.6,-1) --
+           (0.6,-1.8) -- (1.8,-1.8) -- (1.8,-3.7) -- (-1.8,-3.7) -- (-1.8,-1.8) --
+           (-0.6,-1.8) -- cycle
+           (-0.40,-2.2)--(-0.30,-2.2)--(-0.30,-3.25)--(-0.40,-3.25)--cycle
+           (0.40,-2.2)--(0.30,-2.2)--(0.30,-3.25)--(0.40,-3.25)--cycle;
+    \draw[<->] (0.29,-3.2) --node[anchor=north]  {\footnotesize{$h$}} (-0.29, -3.2);
+    \draw[<-] (0.42,-2.7) --node[anchor=south]  {\footnotesize{$K$}} (1.3, -2.7);
+    \draw  (1.75,1.8) node[anchor=north]  {$\mu$};
+    \draw  (-1.5,-3.7) node[anchor=south]  {\footnotesize{\rom{1}}};
+    \draw  (-2.4,-1) node[anchor=south]  {\footnotesize{\rom{2}}};
+    \draw  (0,-1.65) node[anchor=south]  {\footnotesize{$M$}};
+    \end{tikzpicture} 
+    \caption{ Illustration on how the entropic forces between to plates in the system of interest (\rom{1}) at the given chemical potential of the reservoir (\rom{2}). The two system are connected by a membrane $M$ able to let go through the particles of the depletants }
+    \label{plates2}
+\end{SCfigure}
+
+where $F=F(T,V,N,h)$ is the Helmholtz free energy, N the number of hard spheres in the system and $\mu$ their chemical potential.
+We have that at a constant temperature and volume $dF= \mu dN - KAdh$, so 
+
+\begin{equation}
+    d\Omega=-KAdh-Nd\mu ,
+    \label{omega}
+\end{equation}
+where K is the force per unit area between the plates and A is the area of the plates.
+Differentiating the previous equation we obtain
+
+\begin{equation}
+    \left(\frac{\partial K}{\partial \mu} \right)_h=\frac{1}{A}\left( \frac{\partial N}{\partial h} \right)_{\mu}
+\end{equation}
+
+knowing that
+\begin{equation}
+    K=-\left( \frac{\partial W}{\partial h} \right)_{\mu},
+\end{equation} 
+
+we get that
+
+\begin{equation}
+    -\left( \frac{\partial}{\partial h}\left( \frac{\partial W}{\partial \mu} \right)_h \right)_{\mu}=\frac{1}{A}\left( \frac{\partial N}{\partial h} \right)_{\mu}
+\end{equation} 
+
+The depletion potential $W$ vanishes at infinite separation for all values of $\mu$ of the depletion agent, integrating over $h$ bring us
+\begin{equation}
+    -\left( \frac{\partial W}{\partial \mu} \right)_h=\frac{N(h)-N(\infty)}{A},
+\end{equation}
+
+where $N(h)$ is the number of hard spheres in the system when the plates are at separation $h$ and $N(\infty)$ is that at infinite separation. We can express the number of hard spheres in the previous equation in terms of the surface adsorption
+
+\begin{equation}
+\left( \frac{\partial W}{\partial \mu} \right)_h= \Gamma(h)-\Gamma(\infty),
+ \label{gamma}
+\end{equation}
+
+where 
+\begin{equation}
+    \Gamma(h)=\int\limits_0^h(n(x)-n_b)dx,
+    \label{gamman}
+\end{equation}
+
+and
+
+\begin{equation}
+        \Gamma(\infty)=2\Gamma_{single \: wall}=2\int\limits_0^{\infty}(n(x)-n_b)dx.
+    \label{gammainf}
+\end{equation}
+
+In equation \ref{gammainf} $n(x)$ refers to the concentration profile of spheres near a single wall, while in equation \ref{gamman} $n(x)$ we have the profile between two walls. Expression \ref{gamma} is the extension of the Gibbs adsorption equation for a single surface to the case of two surfaces at finite separation. Integration of equation \ref{gamma} gives
+
+\begin{equation}
+    W(h)=- \int\limits_{-\infty}^{\mu} (\Gamma(x)-\Gamma(\infty))d\mu.
+    \label{pot1}
+\end{equation}
+
+The centre of the hard spheres can't get closer to the wall of the plate than $\frac{\sigma}{2}$ and $A\Gamma(h)$ is equal to the overlap volume $A(\sigma-h)$ times $n_b$ (see Fig. \ref{plates3})
+
+\begin{equation}
+    \begin{aligned}
+        \Gamma(h)-\Gamma(\infty) &= n_b (\sigma-h) \;  & for & \quad h<\sigma \\
+        &=0 \; & for & \quad h\geq \sigma
+         \label{pot2}
+    \end{aligned}
+\end{equation}
+
+The chemical potential of the hard spheres is
+
+\begin{equation}
+    \mu=kT\ln (n_b) .
+     \label{chempot}
+\end{equation}
+
+If we insert equations \ref{pot2} and \ref{chempot} into equation \ref{pot1} we find again the interaction given by \ref{pot}. The calculation with the extended Gibbs adsorption equation has a conceptual advantage, it provides a direct link between the depletion of particles with the entropic potential. This method also gives us a physically motivated approximate expression for the entropic interaction where an exact calculation is not possible.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture} [scale=0.8]
+
+  \fill[pattern=north east lines] (-0.23,-1.99) rectangle (0.24,2.94);
+
+ 
+ \draw[fill=black!15] (-1,-3) -- (-1,3) -- (-0.7,3) -- (-0.7,-3) -- cycle
+                      (1,-3) -- (1,3) -- (0.7,3) -- (0.7,-3) -- cycle;
+ \draw[loosely dashed] (-1.95,-2.99)--(-1.95,2.99)
+                        (1.95,-2.99)--(1.95,2.99)
+                        (-0.25,-2)--(-0.25,2.99)
+                        (0.25,-2)--(0.25,2.99);
+ \draw[<->] (-0.68,-2.9)--node[anchor=north]  {$h$} (0.68,-2.9);
+ \draw[<->] (1.65,-2) --node[anchor=south]{$\sigma$} (3.55,-2) ;          
+ \draw[<->] (0.25,-2.2)--node[anchor=north]  {$\sigma-h$} (-0.25,-2.2);
+ \draw (-2,-1.9616) circle (0.95)
+       (-2.7,0) circle (0.95)
+       (-2.3,2) circle(0.95)
+       (2.2,-0.1) circle(0.95)
+       (2.45,2.1) circle(0.95)
+       (2.6,-2) circle(0.95);
+ \draw[<-] (-1.95,0.8) --node[anchor=south]  {$\frac{\sigma}{2}$} (-1,0.8);
+ \draw[<-] (1,0.9) --node[anchor=south]  {$K$} (2.4,0.9);
+ \draw[->] (-0.7,0.8) --node[anchor=south,fill=white]  {$\frac{\sigma}{2}$} (0.24,0.8);
+\end{tikzpicture}
+\caption{The overlap volume (hatched area) due to hard spheres between two parallel flat plates equals to $A(\sigma - h)$}
+\label{plates3}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Interaction Potential Between two Spheres}
+Applying exactly the same line of reasoning as for the derivation of the extended Gibbs adsorption equation for two flat plates, now we obtain
+
+\begin{equation}
+    -\left(\frac{\partial W_s}{\partial \mu}\right) = N(r)- N(\infty),
+    \label{potspher1}
+\end{equation}
+
+where $N(r)$ is the number of penetrable hard spheres in the system when the colloidal spheres are centre-to-centre separation $r$ and $N(\infty)$ at infinite separation. The difference between the two is caused by the overlapping volume of the depletion zones.
+
+\begin{equation}
+    \begin{aligned}
+        N(r)-N(\infty) & = n_bV_{ov}(r) \quad & for & \quad 2R\leq&r& <2R_d \\
+                        & =0 \; & for &  &r& \geq 2R_d
+        \label{nspher}
+    \end{aligned}
+\end{equation}
+
+with $V_{ov}$ defined as in equation \ref{voldep1} or in \ref{voldep2}. Integrating \ref{potspher1} keeping in consideration \ref{nspher} and \ref{chempot} we immediately obtain \ref{equ:PotAO}.
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Interaction Between a Sphere and a Wall}
+
+
+We can apply the extended Gibbs adsorption equation to the case of a sphere interacting with a wall, we use again
+
+\begin{equation}
+    -\left(\frac{\partial W_{sw}}{\partial \mu}\right) = N(h)- N(\infty),
+    \label{wallspher1}
+\end{equation}
+
+where $N(h)$ is the number of penetrable hard spheres in the system when the colloidal sphere is at a separation $h$ from the wall and $N(\infty)$ is that at infinite distance. Again the difference between the two are caused by the overlap of the excluded volumes, in this case, of the sphere and the wall (see Fig. \ref{platesphere})
+
+\begin{equation}
+\begin{aligned}
+    V_{ov}(h)&=\frac{N(h)- N(\infty)}{n_b}\\
+    &= \frac{1}{3}\pi (\sigma-h)^2 \left( 3R + \frac{\sigma}{2} +h \right) \;&for \quad 0 & \leq h<\sigma \\
+    &=0 \; &for \quad h&\geq \sigma.
+\end{aligned}
+\end{equation}
+
+If we integrate equation \ref{wallspher1} we get 
+
+\begin{equation}
+\begin{aligned}
+   \frac{W_{sp}(h)}{n_bkT} &=-\frac{1}{3} \pi (\sigma-h)^2 \left( 3R + \frac{\sigma}{2} +h \right) \;&for \quad 0 & \leq h<\sigma \\
+   &=0 \; &for \quad h&\geq \sigma \;.
+   \label{wallspher2}
+\end{aligned}
+\end{equation}
+
+When $R\gg \sigma$ equation \ref{wallspher2} becomes
+\begin{equation}
+    W_{sp}(h)=-n_bkT\pi R(\sigma-h)^2 \quad for \quad  0  \leq h<\sigma ,
+    \label{equ:sphwall}
+\end{equation}
+
+which is equal to two times \ref{AOpotspher}.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture} [scale=0.6]
+
+\begin{scope}
+    \clip (1.7,0)  circle (2.8868) ; 
+    \fill[pattern=north east lines] (-3,-3)  rectangle (0.1,4);;
+\end{scope}
+  \draw[densely dashed] (1.7,0)  circle (2.8868) ;
+  \draw[thick] (1.7,0)  circle (2.1) ;
+  \draw[fill=black!15](-1,-4)--(-0.8,-4)--(-0.8,4)--(-1,4)--cycle;
+  \draw[dashed](0.1,-4)--(0.1,4);
+  \draw[<->] (1.7,0)--node[anchor=east]{$R$} (2.75,1.816);
+
+  \draw[<->]  (-0.8,-3.8)--node[anchor=north]{$\frac{\sigma}{2}$} (0.1,-3.8);
+  
+  
+   \draw (2,3) circle (0.7868)
+        (1.8,-3.2) circle (0.7868)
+        (3.6,-2.2) circle (0.7868)
+        (4.19,1.6) circle (0.7868)
+        (5.2,0) circle (0.7868)
+        (5.2,-2) circle (0.7868)
+        (4,3.3) circle (0.7868)
+        (0.2,3.2) circle (0.7868);
+    \draw[<->] (4.4132,-2) --node[anchor=south]{$\sigma$} (5.9868,-2);
+  
+    \draw (2.79,1.85) node[anchor=south]{\footnotesize{$\frac{\sigma}{2}$}};
+    \draw[<->] (2.76,1.82)-- (3.1434,2.5);
+ 
+  
+\end{tikzpicture}
+\caption{Illustration of the overlap volume (hatched) of depletion layers between hard wall and a hard sphere}
+\label{platesphere}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Derjaguin Approximation}
+Derjaguin showed an approximate relation for the force between curved object and the interaction potential between two flat plates.
+In the Derjaguin approximation the spherical surface is replaced by a collection of flat rings. Consider two spheres with radius $ R $ at a centre to centre distance $r=2R+h$. The distance $H$ between the sphere surfaces at a distance $z$ from the line joining the centres is $H=h+2\Delta$, we have that $ (R-\Delta)^2+z^2=R^2$ (see Fig. \ref{Derja} (a)). 
+
+When the range of interaction is short enough it is sufficient to consider only small values of $\frac{h}{R}$ or $\frac{z}{R}$. For  $ z \ll R $ we can write to a good approximation $\Delta =\frac{z^2}{2R}$. Therefore $H=h+\frac{z^2}{R}$ and we have that $dH=\left(\frac{2z}{R}\right)dz$. 
+The interaction between two spheres can be written as the integration of the interactions of flat rings with radius $z$ and surface $2\pi zdz$ at a distance $H(z)$ from each other. If the interaction happens at a suitable short distance, the contributions of the outer rings, with a higher value of $H$ can be neglected, and so we may extended to $z=\infty$.
+
+We have
+
+\begin{equation}
+    W_s(h)=\int\limits_{0}^{\infty} W(H)2\pi zdz=\pi R\int\limits_{h}^{\infty}W(H)dH
+\end{equation}
+
+and then
+
+\begin{equation}
+    K_s=- \frac{\partial W_s(h)}{\partial h}= \pi RW(h),
+    \label{equ:Derja}
+\end{equation}
+
+where in this formula $W(h)$ is a interaction potential between two flat plates and $h$ is the distance between the two plates.
+
+The larger the radius of the sphere the more accurate the Derjaguin Approximation is. This approximation is an useful tool which can be very accurate under the right conditions, but it's better to be careful and to be aware of its limitations.
+
+
+\begin{figure}[t]
+    \centering
+\subfigure[Relevant length scales for describing the interaction between two spheres.]{
+\begin{tikzpicture} [scale=0.85]
+ \draw[thick] (-3,-2.5)  arc (-90:90:2.5) ;
+ \begin{scope}[yscale=1,xscale=-1]
+  \draw[thick] (-3,-2.5)  arc (-90:90:2.5) ;
+   \draw[<->,thick] (-3,0)--node[anchor=south]  {$R$} (-0.5,0);
+ \end{scope}
+  \draw[<->,thick] (-3,0)--node[anchor=south]  {$R$} (-0.5,0);
+  \draw[<->] (-0.46,0)--node[anchor=north]  {$h$} (0.46,0);
+  \draw[<->] (-0.46,1.8)--node[anchor=south]  {$h$} (0.46,1.8);
+  \draw[<->](-1.26,1.8) --node[anchor=south]  {\footnotesize{$\Delta$}}  (-0.44,1.8);
+  \draw[<->](1.26,1.8) --node[anchor=south]  {\footnotesize{$\Delta$}}  (0.44,1.8);
+  \draw[<->](-1.26,2.3) --node[anchor=south]  {$H$}  (1.26,2.3);
+  \draw[loosely dashed] (-0.47,0)--(-0.47,1.76776)
+                        (0.47,0)--(0.47,1.76776)
+                        (-3,0)--node[anchor=east]  {$R$}(-1.24,1.77)
+                        (-3,0)--node[anchor=east]  {$z$}(-3,1.77)
+                        (-3,1.77)--node[anchor=south]  {\footnotesize{$R-\Delta$}}(-1.24,1.77) ;
+\end{tikzpicture}
+}
+\subfigure[Representation of the Derjaguin approximation of the situation shown in figure (a)]{
+\begin{tikzpicture} [scale=0.85]
+ \draw (-3,-2.5) arc (-90:-45:2.5)
+       (-3,2.5) arc (90:45:2.5)
+       (-1.2322,1.77)--(-0.9982,1.77)--node[anchor=east] {\footnotesize{$dz$}}(-0.9982,1.18)--(-0.7542 ,1.18) -- (-0.7542,0.589)--(-0.5,0.589)--(-0.5,-0.589)--(-0.7542,-0.589)--(-0.7542 ,-1.18)--(-0.9982,-1.18)--(-0.9982,-1.77)--(-1.2322,-1.77); 
+ 
+ \begin{scope}[yscale=1,xscale=-1]
+  \draw (-3,-2.5) arc (-90:-45:2.5)
+       (-3,2.5) arc (90:45:2.5)
+       (-1.2322,1.77)--(-0.9982,1.77)--(-0.9982,1.18)--(-0.7542 ,1.18) -- (-0.7542,0.589)--(-0.5,0.589)--(-0.5,-0.589)--(-0.7542,-0.589)--(-0.7542 ,-1.18)--(-0.9982,-1.18)--(-0.9982,-1.77)--(-1.2322,-1.77); 
+       \draw[<->,thick] (-3,0)--node[anchor=south]  {$R$} (-0.5,0);
+ \end{scope}
+  \draw[<->,thick] (-3,0)--node[anchor=south]  {$R$} (-0.5,0);
+  \draw[<->] (-0.46,0)--node[anchor=north]  {$h$} (0.46,0);
+  \draw[<->](-0.9982,1.18)--node[anchor=east] {$z$} (-0.9982,0);
+  \draw[<->] (-0.95,1.5)--node[anchor=south]  {$H$} (0.95,1.5);
+\end{tikzpicture}
+}
+\caption{How the Derjaguin Approximation works}
+\label{Derja}
+\end{figure}
+
+With respect to the depletion interaction  the Derjaguin application becomes accurate when considering a depletion agent which is small compared to the colloidal sphere. If we apply the Derjaguin approximation to equation \ref{pot} in the case of hard spheres using \ref{equ:Derja} we get on the spot \ref{bhospher}.
+
+If we apply the same line of reasoning to the interaction between a sphere and a flat plate we have that $H=h +\Delta$ and thus $dH=\frac{z}{R}dz$, this bring us to the following force
+\begin{equation}
+    K_{sp}=2\pi RW(h) \; .
+    \label{equ:Derja2}
+\end{equation}
+
+From equation \ref{equ:Derja2} it follows that
+
+\begin{equation}
+    W_{sp}(h)=2\pi R \int\limits_{h}^{\infty}W(h')dh' \;.
+\end{equation}
+
+For the case of hard spheres as depletion agent this gives us 
+
+\begin{equation}
+\begin{aligned}
+   W_{sp}(h)&=-n_bkT\pi R (\sigma-h)^2 \;&for \quad 0 & \leq h<\sigma \\
+    &=0 \; &for \quad h&\geq \sigma ,
+\end{aligned}
+\end{equation}
+
+
+in agreement with equation \ref{equ:sphwall}.
